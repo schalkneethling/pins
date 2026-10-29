@@ -1,0 +1,800 @@
+$ npx wrangler d1 execute fts-porter --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"NOT" """x""" "title:y"' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-porter --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"snapd"*' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [
+      {
+        "id": 1,
+        "title": "SnapDOM"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-porter --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"turn" "html" "into" "a" "picture"*' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-porter --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"turn" OR "html" OR "into" OR "a" OR "picture"*' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [
+      {
+        "id": 4,
+        "title": "</> htmx - high power tools for HTML"
+      },
+      {
+        "id": 5,
+        "title": "Tailwind CSS - Rapidly build modern websites without ever leaving your HTML"
+      },
+      {
+        "id": 1,
+        "title": "SnapDOM"
+      },
+      {
+        "id": 171,
+        "title": "Deep dive into image formats"
+      },
+      {
+        "id": 69,
+        "title": "Deep dive into SVG icons"
+      },
+      {
+        "id": 28,
+        "title": "Deep dive into Postgres queries"
+      },
+      {
+        "id": 34,
+        "title": "Deep dive into service workers"
+      },
+      {
+        "id": 106,
+        "title": "Deep dive into performance budgets"
+      },
+      {
+        "id": 36,
+        "title": "Deep dive into unit testing"
+      },
+      {
+        "id": 161,
+        "title": "Deep dive into performance budgets"
+      },
+      {
+        "id": 198,
+        "title": "Deep dive into Docker images"
+      },
+      {
+        "id": 137,
+        "title": "Deep dive into JavaScript modules"
+      },
+      {
+        "id": 142,
+        "title": "Deep dive into Docker images"
+      },
+      {
+        "id": 84,
+        "title": "
+
+$ npx wrangler d1 execute fts-porter --local --json --command INSERT INTO bookmarks_fts (bookmarks_fts) VALUES ('rebuild')
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-porter --local --json --command INSERT INTO bookmarks_fts (bookmarks_fts, rank) VALUES ('integrity-check', 1)
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-trigram --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"NOT" """x""" "title:y"' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-trigram --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"snapd"*' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [
+      {
+        "id": 1,
+        "title": "SnapDOM"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-trigram --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"turn" "html" "into" "a" "picture"*' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-trigram --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"turn" OR "html" OR "into" OR "a" OR "picture"*' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [
+      {
+        "id": 1,
+        "title": "SnapDOM"
+      },
+      {
+        "id": 4,
+        "title": "</> htmx - high power tools for HTML"
+      },
+      {
+        "id": 5,
+        "title": "Tailwind CSS - Rapidly build modern websites without ever leaving your HTML"
+      },
+      {
+        "id": 171,
+        "title": "Deep dive into image formats"
+      },
+      {
+        "id": 69,
+        "title": "Deep dive into SVG icons"
+      },
+      {
+        "id": 198,
+        "title": "Deep dive into Docker images"
+      },
+      {
+        "id": 34,
+        "title": "Deep dive into service workers"
+      },
+      {
+        "id": 106,
+        "title": "Deep dive into performance budgets"
+      },
+      {
+        "id": 161,
+        "title": "Deep dive into performance budgets"
+      },
+      {
+        "id": 36,
+        "title": "Deep dive into unit testing"
+      },
+      {
+        "id": 142,
+        "title": "Deep dive into Docker images"
+      },
+      {
+        "id": 137,
+        "title": "Deep dive into JavaScript modules"
+      },
+      {
+        "id": 28,
+        "title": "Deep dive into Postgres queries"
+      },
+      {
+        "id": 75,
+        "title": "
+
+$ npx wrangler d1 execute fts-trigram --local --json --command INSERT INTO bookmarks_fts (bookmarks_fts) VALUES ('rebuild')
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-trigram --local --json --command INSERT INTO bookmarks_fts (bookmarks_fts, rank) VALUES ('integrity-check', 1)
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 3
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-default --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"NOT" """x""" "title:y"' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-default --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"snapd"*' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [
+      {
+        "id": 1,
+        "title": "SnapDOM"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-default --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"turn" "html" "into" "a" "picture"*' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-default --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"turn" OR "html" OR "into" OR "a" OR "picture"*' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [
+      {
+        "id": 4,
+        "title": "</> htmx - high power tools for HTML"
+      },
+      {
+        "id": 5,
+        "title": "Tailwind CSS - Rapidly build modern websites without ever leaving your HTML"
+      },
+      {
+        "id": 1,
+        "title": "SnapDOM"
+      },
+      {
+        "id": 171,
+        "title": "Deep dive into image formats"
+      },
+      {
+        "id": 69,
+        "title": "Deep dive into SVG icons"
+      },
+      {
+        "id": 28,
+        "title": "Deep dive into Postgres queries"
+      },
+      {
+        "id": 34,
+        "title": "Deep dive into service workers"
+      },
+      {
+        "id": 106,
+        "title": "Deep dive into performance budgets"
+      },
+      {
+        "id": 36,
+        "title": "Deep dive into unit testing"
+      },
+      {
+        "id": 161,
+        "title": "Deep dive into performance budgets"
+      },
+      {
+        "id": 198,
+        "title": "Deep dive into Docker images"
+      },
+      {
+        "id": 137,
+        "title": "Deep dive into JavaScript modules"
+      },
+      {
+        "id": 142,
+        "title": "Deep dive into Docker images"
+      },
+      {
+        "id": 84,
+        "title": "
+
+$ npx wrangler d1 execute fts-default --local --json --command INSERT INTO bookmarks_fts (bookmarks_fts) VALUES ('rebuild')
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-default --local --json --command INSERT INTO bookmarks_fts (bookmarks_fts, rank) VALUES ('integrity-check', 1)
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-porter --local --json --file sql/long-token.sql
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-porter --local --json --command SELECT id, length(note) AS note_bytes FROM bookmarks WHERE id = 300
+[
+  {
+    "results": [
+      {
+        "id": 300,
+        "note_bytes": 32769
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-porter --local --json --file sql/long-token-query.sql
+[
+  {
+    "results": [
+      {
+        "same_first_32768_bytes": 1
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-porter --local --json --command DELETE FROM bookmarks WHERE id = 300
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 export fts-porter --local --output exports/with-index.sql
+ ⛅️ wrangler 4.151.0 (update available 4.155.0)
+───────────────────────────────────────────────
+Resource location: local 
+Use --remote if you want to access the remote instance.
+🌀 Exporting local database fts-porter (00000000-0000-0000-0000-000000000001) from .wrangler/state/v3/d1:
+🌀 To export your remote database, add a --remote flag to your wrangler command.
+🌀 Exporting SQL to exports/with-index.sql...
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mD1_ERROR: Failed to parse body as JSON, got: Error: D1 Export error: cannot export databases with Virtual Tables (fts5)[0m
+      at dumpSql (file:///private/tmp/claude-501/-Users-schalkneethling-dev-opensource-pins/c8746389-effa-4e06-8b45-c4cad66a29ca/scratchpad/fts-spike/work/node_modules/miniflare/dist/src/workers/d1/database.worker.js:40:15)
+      at dumpSql.next (<anonymous>)
+      at Array.from (<anonymous>)
+      at #doExportData (file:///private/tmp/claude-501/-Users-schalkneethling-dev-opensource-pins/c8746389-effa-4e06-8b45-c4cad66a29ca/scratchpad/fts-spike/work/node_modules/miniflare/dist/src/workers/d1/database.worke
+
+$ npx wrangler d1 export fts-porter --local --no-data --output exports/with-index-schema.sql
+ ⛅️ wrangler 4.151.0 (update available 4.155.0)
+───────────────────────────────────────────────
+Resource location: local 
+Use --remote if you want to access the remote instance.
+🌀 Exporting local database fts-porter (00000000-0000-0000-0000-000000000001) from .wrangler/state/v3/d1:
+🌀 To export your remote database, add a --remote flag to your wrangler command.
+🌀 Exporting SQL to exports/with-index-schema.sql...
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mD1_ERROR: Failed to parse body as JSON, got: Error: D1 Export error: cannot export databases with Virtual Tables (fts5)[0m
+      at dumpSql (file:///private/tmp/claude-501/-Users-schalkneethling-dev-opensource-pins/c8746389-effa-4e06-8b45-c4cad66a29ca/scratchpad/fts-spike/work/node_modules/miniflare/dist/src/workers/d1/database.worker.js:40:15)
+      at dumpSql.next (<anonymous>)
+      at Array.from (<anonymous>)
+      at #doExportData (file:///private/tmp/claude-501/-Users-schalkneethling-dev-opensource-pins/c8746389-effa-4e06-8b45-c4cad66a29ca/scratchpad/fts-spike/work/node_modules/miniflare/dist/src/workers/d1/databas
+
+$ npx wrangler d1 export fts-porter --local --table bookmarks --output exports/with-index-bookmarks-only.sql
+ ⛅️ wrangler 4.151.0 (update available 4.155.0)
+───────────────────────────────────────────────
+Resource location: local 
+Use --remote if you want to access the remote instance.
+🌀 Exporting local database fts-porter (00000000-0000-0000-0000-000000000001) from .wrangler/state/v3/d1:
+🌀 To export your remote database, add a --remote flag to your wrangler command.
+🌀 Exporting SQL to exports/with-index-bookmarks-only.sql...
+Done!
+
+
+$ npx wrangler d1 execute fts-default --local --json --command DROP TABLE bookmarks_fts
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 export fts-default --local --output exports/default-triggers-kept.sql
+ ⛅️ wrangler 4.151.0 (update available 4.155.0)
+───────────────────────────────────────────────
+Resource location: local 
+Use --remote if you want to access the remote instance.
+🌀 Exporting local database fts-default (00000000-0000-0000-0000-000000000003) from .wrangler/state/v3/d1:
+🌀 To export your remote database, add a --remote flag to your wrangler command.
+🌀 Exporting SQL to exports/default-triggers-kept.sql...
+Done!
+
+
+$ npx wrangler d1 execute fts-default --local --json --command INSERT INTO bookmarks (id, url, title, domain) VALUES (900, 'https://example.com/900', 'trigger check', 'example.com')
+{
+  "error": {
+    "text": "no such table: main.bookmarks_fts: SQLITE_ERROR"
+  }
+}
+
+
+$ npx wrangler d1 execute fts-porter --local --json --file sql/drop-fts.sql
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 export fts-porter --local --output exports/porter.sql
+ ⛅️ wrangler 4.151.0 (update available 4.155.0)
+───────────────────────────────────────────────
+Resource location: local 
+Use --remote if you want to access the remote instance.
+🌀 Exporting local database fts-porter (00000000-0000-0000-0000-000000000001) from .wrangler/state/v3/d1:
+🌀 To export your remote database, add a --remote flag to your wrangler command.
+🌀 Exporting SQL to exports/porter.sql...
+Done!
+
+
+$ npx wrangler d1 execute fts-porter --local --json --file sql/fts-porter.sql
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-porter --local --json --command INSERT INTO bookmarks_fts (bookmarks_fts, rank) VALUES ('integrity-check', 1)
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-porter --local --json --command SELECT v AS rank_option FROM bookmarks_fts_config WHERE k = 'rank'
+[
+  {
+    "results": [
+      {
+        "rank_option": "bm25(10.0, 4.0, 2.0, 6.0)"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-porter --local --json --command SELECT b.id, b.title FROM bookmarks_fts JOIN bookmarks AS b ON b.id = bookmarks_fts.rowid WHERE bookmarks_fts MATCH '"snapd"*' ORDER BY rank LIMIT 50
+[
+  {
+    "results": [
+      {
+        "id": 1,
+        "title": "SnapDOM"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-restore --local --json --file exports/porter.sql
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": tru
+
+$ npx wrangler d1 execute fts-restore --local --json --file sql/fts-porter.sql
+[
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  },
+  {
+    "results": [],
+    "success": true,
+    "meta": {
+      "duration": 1
+    }
+  }
+]
+
+
+$ npx wrangler d1 execute fts-restore --local --json --command SELECT (SELECT count(*) FROM bookmarks) AS bookmarks, (SELECT count(*) FROM bookmarks_fts WHERE bookmarks_fts MATCH '"snapd"*') AS snapd_matches, (SELECT v FROM bookmarks_fts_config WHERE k = 'rank') AS rank_option
+[
+  {
+    "results": [
+      {
+        "bookmarks": 200,
+        "snapd_matches": 1,
+        "rank_option": "bm25(10.0, 4.0, 2.0, 6.0)"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "duration": 0
+    }
+  }
+]
+
+
