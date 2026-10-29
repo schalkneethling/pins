@@ -34,3 +34,23 @@ dist-ssr
 !.env.schema
 .env.local
 .env.*.local
+
+# Cloudflare and Wrangler local state
+# No .dev.vars file may ever exist in this project. Secrets have one writer:
+# Varlock reads 1Password, and varlock-wrangler deploys them. The quality
+# workflow fails when a .dev.vars file exists anywhere in the workspace.
+.dev.vars*
+.wrangler/
+
+# Calavera local caches. Keep .calavera/state.json and .calavera/artifacts.lock.json tracked.
+.calavera/cache/
+.calavera/.transactions/
+
+# Build output of the workspace apps
+apps/*/dist/
+
+# Claude Code agent worktrees must never be committed
+.claude/worktrees/
+
+# TypeScript build info written by "tsc -b"
+*.tsbuildinfo
