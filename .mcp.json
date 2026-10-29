@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "calavera": {
+      "command": "pnpm",
+      "args": ["dlx", "--package", "create-project-calavera@5.0.0", "create-project-calavera-mcp"]
+    }
+  }
+}

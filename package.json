@@ -1,0 +1,44 @@
+{
+  "name": "pins",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vp dev",
+    "build": "tsc && vp build",
+    "preview": "vp preview",
+    "prepare": "vp config",
+    "lint:styles": "stylelint \"**/*.{css,scss}\" --allow-empty-input",
+    "lint:styles:fix": "stylelint \"**/*.{css,scss}\" --allow-empty-input --fix",
+    "react:doctor": "react-doctor --offline",
+    "react:doctor:diff": "react-doctor --offline --diff",
+    "knip": "knip",
+    "lint:html": "node scripts/lint-html.mjs \"**/*.html\"",
+    "env:load": "varlock load",
+    "repo:controls:check": "node scripts/repository-controls.mjs",
+    "repo:controls:apply": "node scripts/repository-controls.mjs --apply",
+    "quality": "vp check && vp test --passWithNoTests && pnpm lint:styles && pnpm lint:html && pnpm knip && pnpm react:doctor && pnpm env:load"
+  },
+  "devDependencies": {
+    "@schalkneethling/stylelint-plugin-css-property-type-validator": "0.1.0-beta.1",
+    "html-validate": "^11.17.0",
+    "knip": "^6.42.1",
+    "react-doctor": "^0.9.18",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^8.1.2",
+    "stylelint-plugin-logical-css": "^2.1.0",
+    "stylelint-plugin-use-baseline": "^1.4.8",
+    "typescript": "~6.0.3",
+    "varlock": "^1.23.0",
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.15.0",
+      "onFail": "download"
+    }
+  }
+}

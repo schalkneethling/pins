@@ -1,0 +1,46 @@
+# Repository controls
+
+Calavera generated a committed desired-state policy for `schalkneethling/pins`.
+
+Run the read-only drift check before applying any remote changes:
+
+```sh
+node scripts/repository-controls.mjs
+```
+
+Review the reported plan, then apply it interactively:
+
+```sh
+node scripts/repository-controls.mjs --apply
+```
+
+For intentional unattended administration, add `--yes` to the apply command.
+
+## CodeQL merge protection
+
+The generated policy uses the extended query suite and requires CodeQL results, blocking errors and warnings plus medium-or-higher security alerts. Edit `mainRuleset.codeScanning` in the committed policy to choose thresholds; set it to null to leave scanning rules unmanaged (existing remote rules are retained). Older policies without this field leave scanning rules unmanaged. Re-applying the Calavera recipe regenerates the policy.
+
+Checks verify active branch enforcement, default-branch scope without exclusions, and an explicitly empty bypass list. Applying repairs these shared protections and preserves unrelated rules and other scanners. Review the plan before applying.
+
+GitHub must support code-scanning merge protection for the repository. A required scan must have results for both the commit and target reference. See [GitHub rules documentation](https://docs.github.com/en/rest/repos/rules).
+
+## Required status checks
+
+The generated policy requires no status checks, so `mainRuleset.requiredChecks` is empty. A required check is the exact name that a check reports on a pull request, usually the workflow job name. A name that no check reports blocks every merge, so add names only after your first continuous integration run.
+
+To require another check, add its name to `requiredChecks` in the Calavera recipe and re-apply the recipe. Do not add checks to the `protect-default-branch` ruleset in the repository settings: the drift check reports them and apply removes them. To require a check outside Calavera, create a separate ruleset in the repository settings that Calavera does not manage. See [Available rules for rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets) and [Creating rulesets for a repository](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/creating-rulesets-for-a-repository).
+
+## CodeQL languages
+
+GitHub rejects a default setup language that it does not detect in the repository. The drift check reports such a language as blocked, with the reason. GitHub detects `actions` when the default branch has workflow files in `.github/workflows/`. Add the missing code, or remove the language from `security.codeqlDefaultSetup.languages`, then run the drift check again. GitHub can take a short time to detect code after a push.
+
+## Partial apply
+
+Apply runs the default-branch ruleset first, CodeQL default setup last, and every other change in between. A failed change does not stop the others; a change runs only after the changes it requires (Dependabot security updates require Dependabot alerts). A blocked CodeQL language skips CodeQL default setup and nothing else. An apply that does not fully succeed ends with a summary of the changes applied, failed (with the error), and not attempted, with what to do about each, and exits with a non-zero code.
+
+If CodeQL default setup does not apply, the ruleset still requires CodeQL results, so it blocks merges until CodeQL default setup is configured and reports results. Set `mainRuleset.codeScanning` to null so that Calavera no longer manages the rule. A rule that already exists stays and keeps blocking merges; delete it in **Settings → Rules** to stop requiring CodeQL results.
+
+## Manual controls
+
+- In **Settings → Advanced Security**, enable Dependabot malware alerts.
+  The generated script verifies the repository identity before planning or applying changes. Unsupported GitHub plan features are reported separately from drift.
