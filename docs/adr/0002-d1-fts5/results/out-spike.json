@@ -1,0 +1,3023 @@
+{
+  "porter": {
+    "seed": {
+      "rows": 200,
+      "minWritten": 3,
+      "maxWritten": 3
+    },
+    "operations": {
+      "insert": {
+        "rows_read": 1,
+        "rows_written": 3
+      },
+      "updateIndexedColumns": {
+        "rows_read": 1,
+        "rows_written": 3
+      },
+      "updateUrlOnly": {
+        "rows_read": 1,
+        "rows_written": 2
+      },
+      "indexStillFindsRowAfterUrlOnlyUpdate": 1,
+      "delete": {
+        "rows_read": 1,
+        "rows_written": 2
+      }
+    },
+    "threeWord": {
+      "strict": {
+        "match": "\"css\" \"web\" \"components\"*",
+        "matches": 6,
+        "byOrder": {
+          "rank": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 11,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 6,
+              "rows_read": 12,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 6,
+              "rows_read": 12,
+              "rows_written": 0
+            }
+          },
+          "weightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            }
+          },
+          "unweightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            }
+          }
+        }
+      },
+      "loose": {
+        "match": "\"css\" OR \"web\" OR \"components\"*",
+        "matches": 81,
+        "byOrder": {
+          "rank": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 11,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 50,
+              "rows_read": 99,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 81,
+              "rows_read": 162,
+              "rows_written": 0
+            }
+          },
+          "weightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 243,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 50,
+              "rows_read": 243,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 81,
+              "rows_read": 243,
+              "rows_written": 0
+            }
+          },
+          "unweightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 243,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 50,
+              "rows_read": 243,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 81,
+              "rows_read": 243,
+              "rows_written": 0
+            }
+          }
+        }
+      }
+    },
+    "rankOption": {
+      "stored": "bm25(10.0, 4.0, 2.0, 6.0)",
+      "rankVsWeighted": {
+        "total": 42,
+        "sameIds": 42,
+        "sameScores": 42
+      },
+      "rankVsUnweighted": {
+        "total": 42,
+        "sameIds": 30,
+        "sameScores": 8
+      },
+      "afterRebuild": {
+        "stored": "bm25(10.0, 4.0, 2.0, 6.0)",
+        "rankVsWeighted": {
+          "total": 42,
+          "sameIds": 42,
+          "sameScores": 42
+        }
+      },
+      "afterRecreateWithoutOption": {
+        "stored": null,
+        "rankVsUnweighted": {
+          "total": 42,
+          "sameIds": 42,
+          "sameScores": 42
+        },
+        "rankVsWeighted": {
+          "total": 42,
+          "sameIds": 30,
+          "sameScores": 8
+        }
+      },
+      "afterSettingAgain": {
+        "stored": "bm25(10.0, 4.0, 2.0, 6.0)",
+        "rankVsWeighted": {
+          "total": 42,
+          "sameIds": 42,
+          "sameScores": 42
+        }
+      }
+    },
+    "maintenance": {
+      "rebuild": {
+        "ok": true,
+        "value": {
+          "rows_read": 0,
+          "rows_written": 1
+        }
+      },
+      "integrity": {
+        "ok": true,
+        "value": {
+          "rows_read": 0,
+          "rows_written": 1
+        }
+      }
+    },
+    "scoreSign": {
+      "query": "css container queries (loose)",
+      "top": [
+        {
+          "id": 6,
+          "title": "CSS container queries - CSS | MDN",
+          "rank": -17.53406761689839,
+          "normalised": 1
+        },
+        {
+          "id": 11,
+          "title": "Shadow DOM v1 - Self-Contained Web Components",
+          "rank": -10.246057850204298,
+          "normalised": 0.5843514507911273
+        },
+        {
+          "id": 32,
+          "title": "Practical Postgres queries",
+          "rank": -7.931954000715446,
+          "normalised": 0.45237386863223084
+        },
+        {
+          "id": 28,
+          "title": "Deep dive into Postgres queries",
+          "rank": -7.859758721652386,
+          "normalised": 0.4482564395997637
+        },
+        {
+          "id": 146,
+          "title": "Practical Postgres queries",
+          "rank": -6.076041683531135,
+          "normalised": 0.34652778900403997
+        }
+      ]
+    },
+    "quoting": {
+      "a\"b": {
+        "quoted": "\"a\"\"b\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"a\"\"b\"",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"a\"\"b\"",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "NOT": {
+        "quoted": "\"NOT\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"NOT\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 20
+        },
+        "loose": "\"NOT\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 20
+        }
+      },
+      "title:x": {
+        "quoted": "\"title:x\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"title:x\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"title:x\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "\"": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "-": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "(empty)": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "(whitespace)": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "300 words": {
+        "quoted": "(2176 chars)",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "(2177 chars)",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "(3074 chars)",
+        "looseRun": {
+          "ok": true,
+          "count": 97
+        }
+      },
+      "NOT \"x\" title:y": {
+        "quoted": "\"NOT\" \"\"\"x\"\"\" \"title:y\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"NOT\" \"\"\"x\"\"\" \"title:y\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"NOT\" OR \"\"\"x\"\"\" OR \"title:y\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "snapdom -": {
+        "quoted": "\"snapdom\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 1
+        },
+        "strict": "\"snapdom\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 1
+        },
+        "loose": "\"snapdom\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 1
+        }
+      },
+      "c++": {
+        "quoted": "\"c++\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 1
+        },
+        "strict": "\"c++\"",
+        "strictRun": {
+          "ok": true,
+          "count": 1
+        },
+        "loose": "\"c++\"",
+        "looseRun": {
+          "ok": true,
+          "count": 1
+        }
+      },
+      "css c": {
+        "quoted": "\"css\" \"c\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"css\" \"c\"",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"css\" OR \"c\"",
+        "looseRun": {
+          "ok": true,
+          "count": 44
+        }
+      },
+      "café": {
+        "quoted": "\"café\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"café\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"café\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "日本語": {
+        "quoted": "\"日本語\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"日本語\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"日本語\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "*": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      }
+    },
+    "oldRules": {
+      "\"snapdom\" \"-\"*": {
+        "ok": true,
+        "value": 1
+      },
+      "\"snapdom\" \"-\"": {
+        "ok": true,
+        "value": 1
+      },
+      "\"c++\"*": {
+        "ok": true,
+        "value": 185
+      },
+      "\"css\" \"c\"*": {
+        "ok": true,
+        "value": 43
+      },
+      "\"a\"*": {
+        "ok": true,
+        "value": 200
+      },
+      "\"-\"": {
+        "ok": true,
+        "value": 0
+      }
+    },
+    "rawInputs": {
+      "NOT \"x\" title:y": {
+        "ok": false,
+        "error": "fts5: syntax error near \"NOT\": SQLITE_ERROR"
+      },
+      "NOT": {
+        "ok": false,
+        "error": "fts5: syntax error near \"NOT\": SQLITE_ERROR"
+      },
+      "title:x": {
+        "ok": true,
+        "value": 0
+      },
+      "a\"b": {
+        "ok": false,
+        "error": "unterminated string: SQLITE_ERROR"
+      },
+      "(empty)": {
+        "ok": false,
+        "error": "fts5: syntax error near \"\": SQLITE_ERROR"
+      },
+      "snapd*": {
+        "ok": true,
+        "value": 1
+      }
+    },
+    "prefixSnapd": {
+      "ok": true,
+      "value": ["SnapDOM"]
+    },
+    "samples": [
+      {
+        "kind": "natural",
+        "query": "capture a dom element as an image",
+        "strict": "\"capture\" \"a\" \"dom\" \"element\" \"as\" \"an\" \"image\"*",
+        "loose": "\"capture\" OR \"a\" OR \"dom\" OR \"element\" OR \"as\" OR \"an\" OR \"image\"*",
+        "intended": 1,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [1, 197, 80, 153, 11],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [1, 197, 80, 11, 153],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 199,
+          "looseWeightedBm25": 582
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "turn html into a picture",
+        "strict": "\"turn\" \"html\" \"into\" \"a\" \"picture\"*",
+        "loose": "\"turn\" OR \"html\" OR \"into\" OR \"a\" OR \"picture\"*",
+        "intended": 1,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [4, 5, 1, 171, 69],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 3,
+        "looseTop5Unweighted": [4, 1, 5, 108, 171],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 199,
+          "looseWeightedBm25": 444
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "make images smaller",
+        "strict": "\"make\" \"images\" \"smaller\"*",
+        "loose": "\"make\" OR \"images\" OR \"smaller\"*",
+        "intended": 2,
+        "strictCount": 7,
+        "gateCount": 6,
+        "intendedInStrict": true,
+        "looseTop5": [165, 68, 56, 41, 81],
+        "intendedInLooseTop5": false,
+        "intendedLooseRank": 12,
+        "looseTop5Unweighted": [68, 164, 56, 61, 2],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 11,
+          "looseRank": 166,
+          "looseWeightedBm25": 249
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "javascript date formatting library",
+        "strict": "\"javascript\" \"date\" \"formatting\" \"library\"*",
+        "loose": "\"javascript\" OR \"date\" OR \"formatting\" OR \"library\"*",
+        "intended": 3,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [3, 182, 94, 137, 37],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [3, 182, 94, 137, 37],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 120,
+          "looseWeightedBm25": 180
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "css container queries",
+        "strict": "\"css\" \"container\" \"queries\"*",
+        "loose": "\"css\" OR \"container\" OR \"queries\"*",
+        "intended": 6,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [6, 11, 32, 28, 146],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [6, 32, 28, 11, 146],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 98,
+          "looseWeightedBm25": 147
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "how to center a div",
+        "strict": "\"how\" \"to\" \"center\" \"a\" \"div\"*",
+        "loose": "\"how\" OR \"to\" OR \"center\" OR \"a\" OR \"div\"*",
+        "intended": 7,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [7, 137, 142, 103, 161],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [7, 137, 142, 161, 103],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 199,
+          "looseWeightedBm25": 462
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "accessible modal dialog",
+        "strict": "\"accessible\" \"modal\" \"dialog\"*",
+        "loose": "\"accessible\" OR \"modal\" OR \"dialog\"*",
+        "intended": 8,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [8, 194, 133, 4, 19],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [8, 194, 133, 4, 19],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 10,
+          "looseWeightedBm25": 15
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "postgres full text search",
+        "strict": "\"postgres\" \"full\" \"text\" \"search\"*",
+        "loose": "\"postgres\" OR \"full\" OR \"text\" OR \"search\"*",
+        "intended": 9,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [9, 144, 14, 32, 146],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [9, 144, 14, 32, 146],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 56,
+          "looseWeightedBm25": 84
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "rust error handling",
+        "strict": "\"rust\" \"error\" \"handling\"*",
+        "loose": "\"rust\" OR \"error\" OR \"handling\"*",
+        "intended": 10,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [10, 130, 102, 199, 151],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [10, 130, 102, 199, 151],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 66,
+          "looseWeightedBm25": 99
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "styling web components shadow dom",
+        "strict": "\"styling\" \"web\" \"components\" \"shadow\" \"dom\"*",
+        "loose": "\"styling\" OR \"web\" OR \"components\" OR \"shadow\" OR \"dom\"*",
+        "intended": 11,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [11, 197, 135, 35, 82],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [11, 197, 135, 35, 82],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 154,
+          "looseWeightedBm25": 231
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "undo last git commit",
+        "strict": "\"undo\" \"last\" \"git\" \"commit\"*",
+        "loose": "\"undo\" OR \"last\" OR \"git\" OR \"commit\"*",
+        "intended": 12,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [12, 123, 23, 196, 24],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [12, 123, 23, 196, 24],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 22,
+          "looseWeightedBm25": 33
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "vs code keyboard shortcuts",
+        "strict": "\"vs\" \"code\" \"keyboard\" \"shortcuts\"*",
+        "loose": "\"vs\" OR \"code\" OR \"keyboard\" OR \"shortcuts\"*",
+        "intended": 13,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [13, 176, 178, 172, 113],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [13, 176, 172, 113, 123],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 44,
+          "looseWeightedBm25": 66
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "lazy load images when they scroll into view",
+        "strict": "\"lazy\" \"load\" \"images\" \"when\" \"they\" \"scroll\" \"into\" \"view\"*",
+        "loose": "\"lazy\" OR \"load\" OR \"images\" OR \"when\" OR \"they\" OR \"scroll\" OR \"into\" OR \"view\"*",
+        "intended": 16,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [16, 103, 198, 161, 54],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [16, 198, 107, 98, 161],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 172,
+          "looseWeightedBm25": 258
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "draw diagrams that look hand drawn",
+        "strict": "\"draw\" \"diagrams\" \"that\" \"look\" \"hand\" \"drawn\"*",
+        "loose": "\"draw\" OR \"diagrams\" OR \"that\" OR \"look\" OR \"hand\" OR \"drawn\"*",
+        "intended": 17,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [17, 26, 88, 178, 125],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [17, 26, 88, 178, 125],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 84,
+          "looseWeightedBm25": 126
+        }
+      },
+      {
+        "kind": "name",
+        "query": "snapdom",
+        "strict": "\"snapdom\"*",
+        "loose": "\"snapdom\"*",
+        "intended": 1,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [1],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [1],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "squoosh",
+        "strict": "\"squoosh\"*",
+        "loose": "\"squoosh\"*",
+        "intended": 2,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [2],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [2],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "date-fns",
+        "strict": "\"date-fns\"*",
+        "loose": "\"date-fns\"*",
+        "intended": 3,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [3],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [3],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "htmx",
+        "strict": "\"htmx\"*",
+        "loose": "\"htmx\"*",
+        "intended": 4,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [4],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [4],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "tailwind",
+        "strict": "\"tailwind\"*",
+        "loose": "\"tailwind\"*",
+        "intended": 5,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [5],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [5],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "excalidraw",
+        "strict": "\"excalidraw\"*",
+        "loose": "\"excalidraw\"*",
+        "intended": 17,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [17],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [17],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "regex101",
+        "strict": "\"regex101\"*",
+        "loose": "\"regex101\"*",
+        "intended": 18,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [18],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [18],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      }
+    ],
+    "worstRowsRead": {
+      "strictRankLimit6": 11,
+      "strictWeightedBm25Limit6": 21,
+      "looseRankLimit100": 199,
+      "looseWeightedBm25Limit100": 582
+    },
+    "longToken": {
+      "insert": {
+        "ok": true,
+        "value": {
+          "rows_read": 1,
+          "rows_written": 3
+        }
+      },
+      "storedNoteLength": {
+        "ok": true,
+        "value": 32769
+      },
+      "matchExact32769": {
+        "ok": true,
+        "value": 1
+      },
+      "matchSameFirst32768DifferentTail": {
+        "ok": true,
+        "value": 1
+      },
+      "match32767": {
+        "ok": true,
+        "value": 0
+      }
+    }
+  },
+  "trigram": {
+    "seed": {
+      "rows": 200,
+      "minWritten": 3,
+      "maxWritten": 3
+    },
+    "operations": {
+      "insert": {
+        "rows_read": 1,
+        "rows_written": 3
+      },
+      "updateIndexedColumns": {
+        "rows_read": 1,
+        "rows_written": 3
+      },
+      "updateUrlOnly": {
+        "rows_read": 1,
+        "rows_written": 2
+      },
+      "indexStillFindsRowAfterUrlOnlyUpdate": 2,
+      "delete": {
+        "rows_read": 1,
+        "rows_written": 2
+      }
+    },
+    "threeWord": {
+      "strict": {
+        "match": "\"css\" \"web\" \"components\"*",
+        "matches": 6,
+        "byOrder": {
+          "rank": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 11,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 6,
+              "rows_read": 12,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 6,
+              "rows_read": 12,
+              "rows_written": 0
+            }
+          },
+          "weightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            }
+          },
+          "unweightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            }
+          }
+        }
+      },
+      "loose": {
+        "match": "\"css\" OR \"web\" OR \"components\"*",
+        "matches": 82,
+        "byOrder": {
+          "rank": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 11,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 50,
+              "rows_read": 99,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 82,
+              "rows_read": 164,
+              "rows_written": 0
+            }
+          },
+          "weightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 246,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 50,
+              "rows_read": 246,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 82,
+              "rows_read": 246,
+              "rows_written": 0
+            }
+          },
+          "unweightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 246,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 50,
+              "rows_read": 246,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 82,
+              "rows_read": 246,
+              "rows_written": 0
+            }
+          }
+        }
+      }
+    },
+    "rankOption": {
+      "stored": "bm25(10.0, 4.0, 2.0, 6.0)",
+      "rankVsWeighted": {
+        "total": 42,
+        "sameIds": 42,
+        "sameScores": 42
+      },
+      "rankVsUnweighted": {
+        "total": 42,
+        "sameIds": 30,
+        "sameScores": 6
+      },
+      "afterRebuild": {
+        "stored": "bm25(10.0, 4.0, 2.0, 6.0)",
+        "rankVsWeighted": {
+          "total": 42,
+          "sameIds": 42,
+          "sameScores": 42
+        }
+      },
+      "afterRecreateWithoutOption": {
+        "stored": null,
+        "rankVsUnweighted": {
+          "total": 42,
+          "sameIds": 42,
+          "sameScores": 42
+        },
+        "rankVsWeighted": {
+          "total": 42,
+          "sameIds": 30,
+          "sameScores": 6
+        }
+      },
+      "afterSettingAgain": {
+        "stored": "bm25(10.0, 4.0, 2.0, 6.0)",
+        "rankVsWeighted": {
+          "total": 42,
+          "sameIds": 42,
+          "sameScores": 42
+        }
+      }
+    },
+    "maintenance": {
+      "rebuild": {
+        "ok": true,
+        "value": {
+          "rows_read": 0,
+          "rows_written": 1
+        }
+      },
+      "integrity": {
+        "ok": true,
+        "value": {
+          "rows_read": 0,
+          "rows_written": 1
+        }
+      }
+    },
+    "scoreSign": {
+      "query": "css container queries (loose)",
+      "top": [
+        {
+          "id": 6,
+          "title": "CSS container queries - CSS | MDN",
+          "rank": -18.809827685404503,
+          "normalised": 1
+        },
+        {
+          "id": 32,
+          "title": "Practical Postgres queries",
+          "rank": -8.12125702988427,
+          "normalised": 0.4317560567652602
+        },
+        {
+          "id": 28,
+          "title": "Deep dive into Postgres queries",
+          "rank": -8.000925973475649,
+          "normalised": 0.4253588128127283
+        },
+        {
+          "id": 49,
+          "title": "A guide to Postgres queries",
+          "rank": -6.282707869135855,
+          "normalised": 0.3340119842783528
+        },
+        {
+          "id": 115,
+          "title": "Getting started with Postgres queries",
+          "rank": -6.268966544086966,
+          "normalised": 0.33328144462223724
+        }
+      ]
+    },
+    "quoting": {
+      "a\"b": {
+        "quoted": "\"a\"\"b\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"a\"\"b\"",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"a\"\"b\"",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "NOT": {
+        "quoted": "\"NOT\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 22
+        },
+        "strict": "\"NOT\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 22
+        },
+        "loose": "\"NOT\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 22
+        }
+      },
+      "title:x": {
+        "quoted": "\"title:x\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"title:x\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"title:x\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "\"": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "-": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "(empty)": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "(whitespace)": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "300 words": {
+        "quoted": "(2176 chars)",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "(2177 chars)",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "(3074 chars)",
+        "looseRun": {
+          "ok": true,
+          "count": 97
+        }
+      },
+      "NOT \"x\" title:y": {
+        "quoted": "\"NOT\" \"\"\"x\"\"\" \"title:y\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"NOT\" \"\"\"x\"\"\" \"title:y\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"NOT\" OR \"\"\"x\"\"\" OR \"title:y\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 22
+        }
+      },
+      "snapdom -": {
+        "quoted": "\"snapdom\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 1
+        },
+        "strict": "\"snapdom\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 1
+        },
+        "loose": "\"snapdom\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 1
+        }
+      },
+      "c++": {
+        "quoted": "\"c++\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"c++\"",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"c++\"",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "css c": {
+        "quoted": "\"css\" \"c\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 43
+        },
+        "strict": "\"css\" \"c\"",
+        "strictRun": {
+          "ok": true,
+          "count": 43
+        },
+        "loose": "\"css\" OR \"c\"",
+        "looseRun": {
+          "ok": true,
+          "count": 43
+        }
+      },
+      "café": {
+        "quoted": "\"café\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"café\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"café\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "日本語": {
+        "quoted": "\"日本語\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"日本語\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"日本語\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "*": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      }
+    },
+    "oldRules": {
+      "\"snapdom\" \"-\"*": {
+        "ok": true,
+        "value": 1
+      },
+      "\"snapdom\" \"-\"": {
+        "ok": true,
+        "value": 1
+      },
+      "\"c++\"*": {
+        "ok": true,
+        "value": 0
+      },
+      "\"css\" \"c\"*": {
+        "ok": true,
+        "value": 43
+      },
+      "\"a\"*": {
+        "ok": true,
+        "value": 0
+      },
+      "\"-\"": {
+        "ok": true,
+        "value": 0
+      }
+    },
+    "rawInputs": {
+      "NOT \"x\" title:y": {
+        "ok": false,
+        "error": "fts5: syntax error near \"NOT\": SQLITE_ERROR"
+      },
+      "NOT": {
+        "ok": false,
+        "error": "fts5: syntax error near \"NOT\": SQLITE_ERROR"
+      },
+      "title:x": {
+        "ok": true,
+        "value": 0
+      },
+      "a\"b": {
+        "ok": false,
+        "error": "unterminated string: SQLITE_ERROR"
+      },
+      "(empty)": {
+        "ok": false,
+        "error": "fts5: syntax error near \"\": SQLITE_ERROR"
+      },
+      "snapd*": {
+        "ok": true,
+        "value": 1
+      }
+    },
+    "prefixSnapd": {
+      "ok": true,
+      "value": ["SnapDOM"]
+    },
+    "samples": [
+      {
+        "kind": "natural",
+        "query": "capture a dom element as an image",
+        "strict": "\"capture\" \"a\" \"dom\" \"element\" \"as\" \"an\" \"image\"*",
+        "loose": "\"capture\" OR \"a\" OR \"dom\" OR \"element\" OR \"as\" OR \"an\" OR \"image\"*",
+        "intended": 1,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [1, 80, 153, 190, 136],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [1, 80, 153, 11, 190],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 176,
+          "looseWeightedBm25": 264
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "turn html into a picture",
+        "strict": "\"turn\" \"html\" \"into\" \"a\" \"picture\"*",
+        "loose": "\"turn\" OR \"html\" OR \"into\" OR \"a\" OR \"picture\"*",
+        "intended": 1,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [1, 4, 5, 171, 69],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [4, 1, 5, 108, 171],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 116,
+          "looseWeightedBm25": 174
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "make images smaller",
+        "strict": "\"make\" \"images\" \"smaller\"*",
+        "loose": "\"make\" OR \"images\" OR \"smaller\"*",
+        "intended": 2,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [2, 165, 142, 68, 103],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [2, 68, 142, 165, 103],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 110,
+          "looseWeightedBm25": 165
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "javascript date formatting library",
+        "strict": "\"javascript\" \"date\" \"formatting\" \"library\"*",
+        "loose": "\"javascript\" OR \"date\" OR \"formatting\" OR \"library\"*",
+        "intended": 3,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [3, 94, 182, 137, 37],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [3, 94, 182, 137, 37],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 102,
+          "looseWeightedBm25": 153
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "css container queries",
+        "strict": "\"css\" \"container\" \"queries\"*",
+        "loose": "\"css\" OR \"container\" OR \"queries\"*",
+        "intended": 6,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [6, 32, 28, 49, 115],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [6, 32, 28, 49, 115],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 96,
+          "looseWeightedBm25": 144
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "how to center a div",
+        "strict": "\"how\" \"to\" \"center\" \"a\" \"div\"*",
+        "loose": "\"how\" OR \"to\" OR \"center\" OR \"a\" OR \"div\"*",
+        "intended": 7,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [7, 161, 142, 137, 103],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [7, 161, 142, 137, 103],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 146,
+          "looseWeightedBm25": 219
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "accessible modal dialog",
+        "strict": "\"accessible\" \"modal\" \"dialog\"*",
+        "loose": "\"accessible\" OR \"modal\" OR \"dialog\"*",
+        "intended": 8,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [8],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [8],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "postgres full text search",
+        "strict": "\"postgres\" \"full\" \"text\" \"search\"*",
+        "loose": "\"postgres\" OR \"full\" OR \"text\" OR \"search\"*",
+        "intended": 9,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [9, 144, 14, 32, 49],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [9, 144, 14, 32, 49],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 56,
+          "looseWeightedBm25": 84
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "rust error handling",
+        "strict": "\"rust\" \"error\" \"handling\"*",
+        "loose": "\"rust\" OR \"error\" OR \"handling\"*",
+        "intended": 10,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [10, 130, 199, 102, 151],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [10, 130, 199, 102, 151],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 66,
+          "looseWeightedBm25": 99
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "styling web components shadow dom",
+        "strict": "\"styling\" \"web\" \"components\" \"shadow\" \"dom\"*",
+        "loose": "\"styling\" OR \"web\" OR \"components\" OR \"shadow\" OR \"dom\"*",
+        "intended": 11,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [11, 197, 135, 35, 82],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [11, 197, 135, 35, 134],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 158,
+          "looseWeightedBm25": 237
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "undo last git commit",
+        "strict": "\"undo\" \"last\" \"git\" \"commit\"*",
+        "loose": "\"undo\" OR \"last\" OR \"git\" OR \"commit\"*",
+        "intended": 12,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [12, 103, 196, 23, 123],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [12, 103, 196, 23, 123],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 78,
+          "looseWeightedBm25": 117
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "vs code keyboard shortcuts",
+        "strict": "\"vs\" \"code\" \"keyboard\" \"shortcuts\"*",
+        "loose": "\"vs\" OR \"code\" OR \"keyboard\" OR \"shortcuts\"*",
+        "intended": 13,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [13, 2, 176, 178, 175],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [13, 2, 176, 175, 31],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 46,
+          "looseWeightedBm25": 69
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "lazy load images when they scroll into view",
+        "strict": "\"lazy\" \"load\" \"images\" \"when\" \"they\" \"scroll\" \"into\" \"view\"*",
+        "loose": "\"lazy\" OR \"load\" OR \"images\" OR \"when\" OR \"they\" OR \"scroll\" OR \"into\" OR \"view\"*",
+        "intended": 16,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [16, 103, 198, 160, 89],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [16, 198, 138, 107, 161],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 160,
+          "looseWeightedBm25": 240
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "draw diagrams that look hand drawn",
+        "strict": "\"draw\" \"diagrams\" \"that\" \"look\" \"hand\" \"drawn\"*",
+        "loose": "\"draw\" OR \"diagrams\" OR \"that\" OR \"look\" OR \"hand\" OR \"drawn\"*",
+        "intended": 17,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [17, 10, 26, 88, 178],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [17, 26, 88, 178, 125],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 86,
+          "looseWeightedBm25": 129
+        }
+      },
+      {
+        "kind": "name",
+        "query": "snapdom",
+        "strict": "\"snapdom\"*",
+        "loose": "\"snapdom\"*",
+        "intended": 1,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [1],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [1],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "squoosh",
+        "strict": "\"squoosh\"*",
+        "loose": "\"squoosh\"*",
+        "intended": 2,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [2],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [2],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "date-fns",
+        "strict": "\"date-fns\"*",
+        "loose": "\"date-fns\"*",
+        "intended": 3,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [3],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [3],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "htmx",
+        "strict": "\"htmx\"*",
+        "loose": "\"htmx\"*",
+        "intended": 4,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [4],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [4],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "tailwind",
+        "strict": "\"tailwind\"*",
+        "loose": "\"tailwind\"*",
+        "intended": 5,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [5],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [5],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "excalidraw",
+        "strict": "\"excalidraw\"*",
+        "loose": "\"excalidraw\"*",
+        "intended": 17,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [17],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [17],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "regex101",
+        "strict": "\"regex101\"*",
+        "loose": "\"regex101\"*",
+        "intended": 18,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [18],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [18],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      }
+    ],
+    "worstRowsRead": {
+      "strictRankLimit6": 2,
+      "strictWeightedBm25Limit6": 3,
+      "looseRankLimit100": 176,
+      "looseWeightedBm25Limit100": 264
+    },
+    "longToken": {
+      "insert": {
+        "ok": true,
+        "value": {
+          "rows_read": 1,
+          "rows_written": 3
+        }
+      },
+      "storedNoteLength": {
+        "ok": true,
+        "value": 32769
+      },
+      "matchExact32769": {
+        "ok": true,
+        "value": 1
+      },
+      "matchSameFirst32768DifferentTail": {
+        "ok": true,
+        "value": 0
+      },
+      "match32767": {
+        "ok": true,
+        "value": 1
+      }
+    }
+  },
+  "default": {
+    "seed": {
+      "rows": 200,
+      "minWritten": 3,
+      "maxWritten": 3
+    },
+    "operations": {
+      "insert": {
+        "rows_read": 1,
+        "rows_written": 3
+      },
+      "updateIndexedColumns": {
+        "rows_read": 1,
+        "rows_written": 3
+      },
+      "updateUrlOnly": {
+        "rows_read": 1,
+        "rows_written": 2
+      },
+      "indexStillFindsRowAfterUrlOnlyUpdate": 1,
+      "delete": {
+        "rows_read": 1,
+        "rows_written": 2
+      }
+    },
+    "threeWord": {
+      "strict": {
+        "match": "\"css\" \"web\" \"components\"*",
+        "matches": 6,
+        "byOrder": {
+          "rank": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 11,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 6,
+              "rows_read": 12,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 6,
+              "rows_read": 12,
+              "rows_written": 0
+            }
+          },
+          "weightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            }
+          },
+          "unweightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 6,
+              "rows_read": 18,
+              "rows_written": 0
+            }
+          }
+        }
+      },
+      "loose": {
+        "match": "\"css\" OR \"web\" OR \"components\"*",
+        "matches": 81,
+        "byOrder": {
+          "rank": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 11,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 50,
+              "rows_read": 99,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 81,
+              "rows_read": 162,
+              "rows_written": 0
+            }
+          },
+          "weightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 243,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 50,
+              "rows_read": 243,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 81,
+              "rows_read": 243,
+              "rows_written": 0
+            }
+          },
+          "unweightedBm25": {
+            "limit6": {
+              "returned": 6,
+              "rows_read": 243,
+              "rows_written": 0
+            },
+            "limit50": {
+              "returned": 50,
+              "rows_read": 243,
+              "rows_written": 0
+            },
+            "limit100": {
+              "returned": 81,
+              "rows_read": 243,
+              "rows_written": 0
+            }
+          }
+        }
+      }
+    },
+    "rankOption": {
+      "stored": "bm25(10.0, 4.0, 2.0, 6.0)",
+      "rankVsWeighted": {
+        "total": 42,
+        "sameIds": 42,
+        "sameScores": 42
+      },
+      "rankVsUnweighted": {
+        "total": 42,
+        "sameIds": 31,
+        "sameScores": 9
+      },
+      "afterRebuild": {
+        "stored": "bm25(10.0, 4.0, 2.0, 6.0)",
+        "rankVsWeighted": {
+          "total": 42,
+          "sameIds": 42,
+          "sameScores": 42
+        }
+      },
+      "afterRecreateWithoutOption": {
+        "stored": null,
+        "rankVsUnweighted": {
+          "total": 42,
+          "sameIds": 42,
+          "sameScores": 42
+        },
+        "rankVsWeighted": {
+          "total": 42,
+          "sameIds": 31,
+          "sameScores": 9
+        }
+      },
+      "afterSettingAgain": {
+        "stored": "bm25(10.0, 4.0, 2.0, 6.0)",
+        "rankVsWeighted": {
+          "total": 42,
+          "sameIds": 42,
+          "sameScores": 42
+        }
+      }
+    },
+    "maintenance": {
+      "rebuild": {
+        "ok": true,
+        "value": {
+          "rows_read": 0,
+          "rows_written": 1
+        }
+      },
+      "integrity": {
+        "ok": true,
+        "value": {
+          "rows_read": 0,
+          "rows_written": 1
+        }
+      }
+    },
+    "scoreSign": {
+      "query": "css container queries (loose)",
+      "top": [
+        {
+          "id": 6,
+          "title": "CSS container queries - CSS | MDN",
+          "rank": -18.804110115166672,
+          "normalised": 1
+        },
+        {
+          "id": 32,
+          "title": "Practical Postgres queries",
+          "rank": -8.167490908748823,
+          "normalised": 0.43434604768460905
+        },
+        {
+          "id": 28,
+          "title": "Deep dive into Postgres queries",
+          "rank": -8.094070772846576,
+          "normalised": 0.4304415749149549
+        },
+        {
+          "id": 146,
+          "title": "Practical Postgres queries",
+          "rank": -6.311578591564512,
+          "normalised": 0.3356488848931934
+        },
+        {
+          "id": 144,
+          "title": "Notes on Postgres queries",
+          "rank": -6.295124835411371,
+          "normalised": 0.33477387639492523
+        }
+      ]
+    },
+    "quoting": {
+      "a\"b": {
+        "quoted": "\"a\"\"b\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"a\"\"b\"",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"a\"\"b\"",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "NOT": {
+        "quoted": "\"NOT\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"NOT\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 20
+        },
+        "loose": "\"NOT\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 20
+        }
+      },
+      "title:x": {
+        "quoted": "\"title:x\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"title:x\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"title:x\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "\"": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "-": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "(empty)": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "(whitespace)": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      },
+      "300 words": {
+        "quoted": "(2176 chars)",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "(2177 chars)",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "(3074 chars)",
+        "looseRun": {
+          "ok": true,
+          "count": 67
+        }
+      },
+      "NOT \"x\" title:y": {
+        "quoted": "\"NOT\" \"\"\"x\"\"\" \"title:y\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"NOT\" \"\"\"x\"\"\" \"title:y\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"NOT\" OR \"\"\"x\"\"\" OR \"title:y\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "snapdom -": {
+        "quoted": "\"snapdom\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 1
+        },
+        "strict": "\"snapdom\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 1
+        },
+        "loose": "\"snapdom\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 1
+        }
+      },
+      "c++": {
+        "quoted": "\"c++\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 1
+        },
+        "strict": "\"c++\"",
+        "strictRun": {
+          "ok": true,
+          "count": 1
+        },
+        "loose": "\"c++\"",
+        "looseRun": {
+          "ok": true,
+          "count": 1
+        }
+      },
+      "css c": {
+        "quoted": "\"css\" \"c\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"css\" \"c\"",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"css\" OR \"c\"",
+        "looseRun": {
+          "ok": true,
+          "count": 44
+        }
+      },
+      "café": {
+        "quoted": "\"café\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"café\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"café\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "日本語": {
+        "quoted": "\"日本語\"",
+        "quotedRun": {
+          "ok": true,
+          "count": 0
+        },
+        "strict": "\"日本語\"*",
+        "strictRun": {
+          "ok": true,
+          "count": 0
+        },
+        "loose": "\"日本語\"*",
+        "looseRun": {
+          "ok": true,
+          "count": 0
+        }
+      },
+      "*": {
+        "quoted": "",
+        "quotedRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "strict": null,
+        "strictRun": {
+          "skipped": "no tokens; no query is sent"
+        },
+        "loose": null,
+        "looseRun": {
+          "skipped": "no tokens; no query is sent"
+        }
+      }
+    },
+    "oldRules": {
+      "\"snapdom\" \"-\"*": {
+        "ok": true,
+        "value": 1
+      },
+      "\"snapdom\" \"-\"": {
+        "ok": true,
+        "value": 1
+      },
+      "\"c++\"*": {
+        "ok": true,
+        "value": 185
+      },
+      "\"css\" \"c\"*": {
+        "ok": true,
+        "value": 43
+      },
+      "\"a\"*": {
+        "ok": true,
+        "value": 200
+      },
+      "\"-\"": {
+        "ok": true,
+        "value": 0
+      }
+    },
+    "rawInputs": {
+      "NOT \"x\" title:y": {
+        "ok": false,
+        "error": "fts5: syntax error near \"NOT\": SQLITE_ERROR"
+      },
+      "NOT": {
+        "ok": false,
+        "error": "fts5: syntax error near \"NOT\": SQLITE_ERROR"
+      },
+      "title:x": {
+        "ok": true,
+        "value": 0
+      },
+      "a\"b": {
+        "ok": false,
+        "error": "unterminated string: SQLITE_ERROR"
+      },
+      "(empty)": {
+        "ok": false,
+        "error": "fts5: syntax error near \"\": SQLITE_ERROR"
+      },
+      "snapd*": {
+        "ok": true,
+        "value": 1
+      }
+    },
+    "prefixSnapd": {
+      "ok": true,
+      "value": ["SnapDOM"]
+    },
+    "samples": [
+      {
+        "kind": "natural",
+        "query": "capture a dom element as an image",
+        "strict": "\"capture\" \"a\" \"dom\" \"element\" \"as\" \"an\" \"image\"*",
+        "loose": "\"capture\" OR \"a\" OR \"dom\" OR \"element\" OR \"as\" OR \"an\" OR \"image\"*",
+        "intended": 1,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [1, 80, 153, 197, 11],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [1, 80, 11, 153, 197],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 199,
+          "looseWeightedBm25": 579
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "turn html into a picture",
+        "strict": "\"turn\" \"html\" \"into\" \"a\" \"picture\"*",
+        "loose": "\"turn\" OR \"html\" OR \"into\" OR \"a\" OR \"picture\"*",
+        "intended": 1,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [4, 5, 1, 171, 69],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 3,
+        "looseTop5Unweighted": [4, 1, 5, 108, 171],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 199,
+          "looseWeightedBm25": 444
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "make images smaller",
+        "strict": "\"make\" \"images\" \"smaller\"*",
+        "loose": "\"make\" OR \"images\" OR \"smaller\"*",
+        "intended": 2,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [2, 165, 142, 68, 103],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [2, 142, 68, 165, 103],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 110,
+          "looseWeightedBm25": 165
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "javascript date formatting library",
+        "strict": "\"javascript\" \"date\" \"formatting\" \"library\"*",
+        "loose": "\"javascript\" OR \"date\" OR \"formatting\" OR \"library\"*",
+        "intended": 3,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [3, 182, 94, 137, 37],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [3, 182, 94, 137, 37],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 68,
+          "looseWeightedBm25": 102
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "css container queries",
+        "strict": "\"css\" \"container\" \"queries\"*",
+        "loose": "\"css\" OR \"container\" OR \"queries\"*",
+        "intended": 6,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [6, 32, 28, 146, 144],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [6, 32, 28, 146, 144],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 96,
+          "looseWeightedBm25": 144
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "how to center a div",
+        "strict": "\"how\" \"to\" \"center\" \"a\" \"div\"*",
+        "loose": "\"how\" OR \"to\" OR \"center\" OR \"a\" OR \"div\"*",
+        "intended": 7,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [137, 142, 103, 161, 75],
+        "intendedInLooseTop5": false,
+        "intendedLooseRank": null,
+        "looseTop5Unweighted": [137, 142, 161, 103, 69],
+        "intendedInLooseTop5Unweighted": false,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 199,
+          "looseWeightedBm25": 462
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "accessible modal dialog",
+        "strict": "\"accessible\" \"modal\" \"dialog\"*",
+        "loose": "\"accessible\" OR \"modal\" OR \"dialog\"*",
+        "intended": 8,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [8],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [8],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "postgres full text search",
+        "strict": "\"postgres\" \"full\" \"text\" \"search\"*",
+        "loose": "\"postgres\" OR \"full\" OR \"text\" OR \"search\"*",
+        "intended": 9,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [9, 144, 14, 32, 146],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [9, 144, 14, 32, 146],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 56,
+          "looseWeightedBm25": 84
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "rust error handling",
+        "strict": "\"rust\" \"error\" \"handling\"*",
+        "loose": "\"rust\" OR \"error\" OR \"handling\"*",
+        "intended": 10,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [10, 130, 102, 199, 151],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [10, 130, 102, 199, 151],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 66,
+          "looseWeightedBm25": 99
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "styling web components shadow dom",
+        "strict": "\"styling\" \"web\" \"components\" \"shadow\" \"dom\"*",
+        "loose": "\"styling\" OR \"web\" OR \"components\" OR \"shadow\" OR \"dom\"*",
+        "intended": 11,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [11, 197, 135, 35, 82],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [11, 197, 135, 35, 82],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 152,
+          "looseWeightedBm25": 228
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "undo last git commit",
+        "strict": "\"undo\" \"last\" \"git\" \"commit\"*",
+        "loose": "\"undo\" OR \"last\" OR \"git\" OR \"commit\"*",
+        "intended": 12,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [12, 123, 23, 196, 24],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [12, 123, 23, 196, 24],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 22,
+          "looseWeightedBm25": 33
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "vs code keyboard shortcuts",
+        "strict": "\"vs\" \"code\" \"keyboard\" \"shortcuts\"*",
+        "loose": "\"vs\" OR \"code\" OR \"keyboard\" OR \"shortcuts\"*",
+        "intended": 13,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [13, 176, 178, 172, 113],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [13, 176, 172, 113, 123],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 44,
+          "looseWeightedBm25": 66
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "lazy load images when they scroll into view",
+        "strict": "\"lazy\" \"load\" \"images\" \"when\" \"they\" \"scroll\" \"into\" \"view\"*",
+        "loose": "\"lazy\" OR \"load\" OR \"images\" OR \"when\" OR \"they\" OR \"scroll\" OR \"into\" OR \"view\"*",
+        "intended": 16,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [16, 103, 198, 161, 98],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [16, 198, 98, 107, 161],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": true,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 160,
+          "looseWeightedBm25": 240
+        }
+      },
+      {
+        "kind": "natural",
+        "query": "draw diagrams that look hand drawn",
+        "strict": "\"draw\" \"diagrams\" \"that\" \"look\" \"hand\" \"drawn\"*",
+        "loose": "\"draw\" OR \"diagrams\" OR \"that\" OR \"look\" OR \"hand\" OR \"drawn\"*",
+        "intended": 17,
+        "strictCount": 0,
+        "gateCount": 0,
+        "intendedInStrict": false,
+        "looseTop5": [17, 14, 15, 9, 5],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [17, 14, 15, 9, 5],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 0,
+          "looseRank": 70,
+          "looseWeightedBm25": 105
+        }
+      },
+      {
+        "kind": "name",
+        "query": "snapdom",
+        "strict": "\"snapdom\"*",
+        "loose": "\"snapdom\"*",
+        "intended": 1,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [1],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [1],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "squoosh",
+        "strict": "\"squoosh\"*",
+        "loose": "\"squoosh\"*",
+        "intended": 2,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [2],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [2],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "date-fns",
+        "strict": "\"date-fns\"*",
+        "loose": "\"date-fns\"*",
+        "intended": 3,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [3],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [3],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "htmx",
+        "strict": "\"htmx\"*",
+        "loose": "\"htmx\"*",
+        "intended": 4,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [4],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [4],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "tailwind",
+        "strict": "\"tailwind\"*",
+        "loose": "\"tailwind\"*",
+        "intended": 5,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [5],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [5],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "excalidraw",
+        "strict": "\"excalidraw\"*",
+        "loose": "\"excalidraw\"*",
+        "intended": 17,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [17],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [17],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      },
+      {
+        "kind": "name",
+        "query": "regex101",
+        "strict": "\"regex101\"*",
+        "loose": "\"regex101\"*",
+        "intended": 18,
+        "strictCount": 1,
+        "gateCount": 1,
+        "intendedInStrict": true,
+        "looseTop5": [18],
+        "intendedInLooseTop5": true,
+        "intendedLooseRank": 1,
+        "looseTop5Unweighted": [18],
+        "intendedInLooseTop5Unweighted": true,
+        "top5ChangedByWeights": false,
+        "rowsRead": {
+          "gate": 2,
+          "looseRank": 2,
+          "looseWeightedBm25": 3
+        }
+      }
+    ],
+    "worstRowsRead": {
+      "strictRankLimit6": 2,
+      "strictWeightedBm25Limit6": 3,
+      "looseRankLimit100": 199,
+      "looseWeightedBm25Limit100": 579
+    },
+    "longToken": {
+      "insert": {
+        "ok": true,
+        "value": {
+          "rows_read": 1,
+          "rows_written": 3
+        }
+      },
+      "storedNoteLength": {
+        "ok": true,
+        "value": 32769
+      },
+      "matchExact32769": {
+        "ok": true,
+        "value": 1
+      },
+      "matchSameFirst32768DifferentTail": {
+        "ok": true,
+        "value": 1
+      },
+      "match32767": {
+        "ok": true,
+        "value": 0
+      }
+    }
+  }
+}

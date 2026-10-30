@@ -1,0 +1,54 @@
+porter	"a"	112
+porter	"vs"	0
+porter	"a"*	200
+porter	"vs" "code"	0
+porter	"code"	1
+porter	"a" OR "zzzz"	112
+porter	"dom"	9
+porter	"dom" "a"	8
+porter	"searchi"*	0
+porter	"searching"*	22
+porter	"centeri"*	0
+porter	"centering"*	1
+porter	"capturin"*	0
+porter	"compone"*	32
+porter	"librar"*	27
+porter	"images"*	64
+porter	"imag"*	64
+porter	"snapd"*	1
+trigram	"a"	0
+trigram	"vs"	0
+trigram	"a"*	0
+trigram	"vs" "code"	2
+trigram	"code"	2
+trigram	"a" OR "zzzz"	0
+trigram	"dom"	9
+trigram	"dom" "a"	9
+trigram	"searchi"*	21
+trigram	"searching"*	21
+trigram	"centeri"*	1
+trigram	"centering"*	1
+trigram	"capturin"*	23
+trigram	"compone"*	32
+trigram	"librar"*	27
+trigram	"images"*	34
+trigram	"imag"*	64
+trigram	"snapd"*	1
+default	"a"	112
+default	"vs"	0
+default	"a"*	200
+default	"vs" "code"	0
+default	"code"	1
+default	"a" OR "zzzz"	112
+default	"dom"	9
+default	"dom" "a"	8
+default	"searchi"*	21
+default	"searching"*	21
+default	"centeri"*	1
+default	"centering"*	1
+default	"capturin"*	23
+default	"compone"*	32
+default	"librar"*	27
+default	"images"*	34
+default	"imag"*	64
+default	"snapd"*	1

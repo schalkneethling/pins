@@ -1,0 +1,3 @@
+plainNoUnique {"insert":"1r/1w","update":"1r/1w","delete":"1r/1w","fullScan":"200r/0w"}
+plainUnique {"insert":"1r/2w","update":"1r/1w","delete":"1r/1w","fullScan":"200r/0w"}
+noUniqueWithFts {"insert":"1r/2w","update":"1r/3w","delete":"1r/2w","fullScan":"200r/0w","looseTotalMatches":81,"looseCountRows":"81r/0w","looseUnorderedLimit50":"49r/0w","looseOrderedLimit50":"162r/0w","looseOrderedByRankLimit50":"49r/0w","rebuild":"0r/1w","shadowTables":["bookmarks_fts","bookmarks_fts_config","bookmarks_fts_data","bookmarks_fts_docsize","bookmarks_fts_idx"],"readShadowDocsize":"200r/0w"}

@@ -1,0 +1,31 @@
+{
+  "name": "fts-spike",
+  "compatibility_date": "2026-10-01",
+  "d1_databases": [
+    {
+      "binding": "DB_PORTER",
+      "database_name": "fts-porter",
+      "database_id": "00000000-0000-0000-0000-000000000001",
+    },
+    {
+      "binding": "DB_TRIGRAM",
+      "database_name": "fts-trigram",
+      "database_id": "00000000-0000-0000-0000-000000000002",
+    },
+    {
+      "binding": "DB_DEFAULT",
+      "database_name": "fts-default",
+      "database_id": "00000000-0000-0000-0000-000000000003",
+    },
+    {
+      "binding": "DB_RESTORE",
+      "database_name": "fts-restore",
+      "database_id": "00000000-0000-0000-0000-000000000004",
+    },
+    {
+      "binding": "DB_DRYRUN",
+      "database_name": "fts-dryrun",
+      "database_id": "00000000-0000-0000-0000-000000000005",
+    },
+  ],
+}
