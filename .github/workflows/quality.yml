@@ -1,0 +1,43 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      # Secrets have exactly one writer: Varlock reads 1Password and
+      # varlock-wrangler deploys them. A .dev.vars file would be a second writer.
+      - name: Fail when a .dev.vars file exists
+        run: |
+          found="$(find . -name node_modules -prune -o -name '.dev.vars*' -print)"
+          if [ -n "$found" ]; then
+            echo "::error::A .dev.vars file exists. Secrets have one writer (Varlock reading 1Password, deployed with varlock-wrangler), so no .dev.vars file may exist in this project. Remove:"
+            echo "$found"
+            exit 1
+          fi
+
+      # The exact version is on purpose (the Vite+ CI docs say not to use v1); Dependabot updates it.
+      - uses: voidzero-dev/setup-vp@v1.21.2
+        with:
+          node-version: "24"
+          cache: true
+          run-install: false
+
+      - run: vp install --frozen-lockfile
+
+      - run: pnpm quality
+
+      - run: vp -C apps/site build
+
+      - run: vp -C apps/extension build

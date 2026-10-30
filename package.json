@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vp dev",
-    "build": "tsc && vp build",
-    "preview": "vp preview",
+    "dev": "vp -C apps/site dev",
+    "build": "tsc -b && vp run --filter \"./apps/*\" build",
+    "preview": "vp -C apps/site preview",
     "prepare": "vp config",
     "lint:styles": "stylelint \"**/*.{css,scss}\" --allow-empty-input",
     "lint:styles:fix": "stylelint \"**/*.{css,scss}\" --allow-empty-input --fix",
@@ -31,7 +31,6 @@
     "stylelint-plugin-use-baseline": "^1.4.8",
     "typescript": "~6.0.3",
     "varlock": "^1.23.0",
-    "vite": "catalog:",
     "vite-plus": "catalog:"
   },
   "devEngines": {

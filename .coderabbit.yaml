@@ -6,7 +6,6 @@
 
 reviews:
   path_filters:
-    - "!.claude/skills/**"
     - "!.agents/skills/**"
     - "!.agents/agents/claude-code/**"
     - "!.calavera/packages/**"
