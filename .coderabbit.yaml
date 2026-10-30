@@ -10,3 +10,4 @@ reviews:
     - "!.agents/agents/claude-code/**"
     - "!.calavera/packages/**"
     - "!pnpm-lock.yaml"
+    - "!.claude/skills/**"

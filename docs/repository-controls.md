@@ -43,4 +43,4 @@ If CodeQL default setup does not apply, the ruleset still requires CodeQL result
 ## Manual controls
 
 - In **Settings → Advanced Security**, enable Dependabot malware alerts.
-  The generated script verifies the repository identity before planning or applying changes. Unsupported GitHub plan features are reported separately from drift.
+The generated script verifies the repository identity before planning or applying changes. Unsupported GitHub plan features are reported separately from drift.
