@@ -5,7 +5,9 @@
   "repositorySettings": {
     "wiki": false,
     "projects": false,
-    "mergeMethods": ["squash"],
+    "mergeMethods": [
+      "squash"
+    ],
     "autoMerge": true,
     "deleteBranchOnMerge": true,
     "updateBranch": true
@@ -19,7 +21,10 @@
     "dependabotSecurityUpdates": true,
     "codeqlDefaultSetup": {
       "state": "configured",
-      "languages": ["actions", "javascript-typescript"],
+      "languages": [
+        "actions",
+        "javascript-typescript"
+      ],
       "querySuite": "extended",
       "threatModel": "remote",
       "runnerType": "standard",
@@ -33,7 +38,9 @@
       "securityAlertsThreshold": "medium_or_higher"
     },
     "requiredChecks": [],
-    "allowedMergeMethods": ["squash"]
+    "allowedMergeMethods": [
+      "squash"
+    ]
   },
   "releaseEnvironment": null,
   "manualControls": {

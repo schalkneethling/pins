@@ -1,5 +1,8 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-plugin-logical-css/configs/recommended"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-plugin-logical-css/configs/recommended"
+  ],
   "ignoreFiles": [
     "coverage/**",
     "dist/**",

@@ -1,4 +1,7 @@
 {
-  "extends": ["html-validate:recommended", "html-validate:document"],
+  "extends": [
+    "html-validate:recommended",
+    "html-validate:document"
+  ],
   "rules": {}
 }

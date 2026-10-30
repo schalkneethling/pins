@@ -9,7 +9,6 @@
     "html-validate",
     "varlock",
     "github-repository-controls",
-    "react-doctor",
     "stylelint",
     "stylelint-standard",
     "stylelint-order",
@@ -52,14 +51,22 @@
       "repository": "schalkneethling/pins",
       "defaultBranch": "main",
       "requiredChecks": [],
-      "mergeMethods": ["squash"],
+      "mergeMethods": [
+        "squash"
+      ],
       "wiki": false,
       "projects": false,
       "autoMerge": true,
       "deleteBranchOnMerge": true,
       "updateBranch": true,
-      "dependabotEcosystems": ["npm", "github-actions"],
-      "codeqlLanguages": ["actions", "javascript-typescript"],
+      "dependabotEcosystems": [
+        "npm",
+        "github-actions"
+      ],
+      "codeqlLanguages": [
+        "actions",
+        "javascript-typescript"
+      ],
       "codeqlQuerySuite": "extended",
       "releaseEnvironment": null
     }
